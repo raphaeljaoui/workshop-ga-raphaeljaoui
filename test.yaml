@@ -1,0 +1,16 @@
+name: Tests
+
+on:
+  push:
+    branches:
+      -master
+      -dev
+
+jobs:
+  hello-world:
+    runs-on: fedora
+
+steps:
+  - name: say hello world
+    shell: bash
+    run : echo Welcome to the github action workshp ! 
