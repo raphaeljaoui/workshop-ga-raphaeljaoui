@@ -14,3 +14,19 @@ steps:
   - name: say hello world
     shell: bash
     run : echo Welcome to the github action workshp ! 
+
+unit-test:
+  runs-on: fedora
+  container: docker://epitechcontent!epitest-docker
+
+steps:
+  - name: Checkout
+    uses: actions/checkout@v2
+
+  - name: Run tests
+    shell: bash
+    run: make test_run 
+
+  - name: Run coverage
+    shell: bash
+    run: make coverage
